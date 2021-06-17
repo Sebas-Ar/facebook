@@ -3,7 +3,7 @@ import { MongoClient } from "mongodb";
 dotenv.config() */
 
 /* const { RED_BUCAL_MONGODB_HOTS, RED_BUCAL_MONGODB_DATABASE } = process.env
- */const MONGODB_URI = `mongodb://${RED_BUCAL_MONGODB_HOTS}/${RED_BUCAL_MONGODB_DATABASE}`
+//  const MONGODB_URI = `mongodb://${RED_BUCAL_MONGODB_HOTS}/${RED_BUCAL_MONGODB_DATABASE}`*/
 
 const client = new MongoClient('mongodb+srv://sebas:1234@cluster0.z513b.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
     useUnifiedTopology: true,

