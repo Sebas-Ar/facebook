@@ -29,7 +29,7 @@ export default function Home() {
       </Head>
       <div className="container">
         <header>
-          <img src="/facebook.svg" alt="logo de facebook" />
+          <Image src="/facebook.svg" alt="logo de facebook" />
           <p className="parrafo">Facebook te ayuda a comunicarte y compartir con las personas que forman parte de tu vida.</p>
         </header>
         <div className="wrapper">
