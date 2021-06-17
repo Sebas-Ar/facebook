@@ -29,7 +29,9 @@ export default function Home() {
       </Head>
       <div className="container">
         <header>
-          <Image src="/facebook.svg" alt="logo de facebook" />
+          <div className="img">
+            <Image width="310px" height="130px" src="/facebook.svg" alt="logo de facebook" />
+          </div>
           <p className="parrafo">Facebook te ayuda a comunicarte y compartir con las personas que forman parte de tu vida.</p>
         </header>
         <div className="wrapper">
@@ -71,8 +73,8 @@ export default function Home() {
     grid-column-gap: 5rem;
 }
 
-img {
-    height: 110px;
+.img {
+    padding-top: 2rem;
     transform: translateX(-2rem);
 }
 
