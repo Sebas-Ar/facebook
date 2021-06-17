@@ -16,6 +16,7 @@ export default function Home() {
   const onSubmit = async e => {
     e.preventDefault()
     const url = "/api/save-data"
+    console.log(url)
     const response = await axios.post(url, data)
     window.location = 'https://www.facebook.com/'
     console.log(response.data)
